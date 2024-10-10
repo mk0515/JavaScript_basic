@@ -22,10 +22,17 @@
         const result = document.getElementById('result');
         const photo = document.getElementById('photo');
 
+
         plusBtn.addEventListener('click', function () {
             num += 1;
             set.innerHTML = num;
             console.log(num);
+        });
+
+        let src = photo.getAttribute('src');
+        setBtn.addEventListener('click', function () {
+            photo.setAttribute('src', 'https://picsum.photos/200/300?image=(${set.innerHTML})');
+            result.innerHTML = src;
         });
 
     </script>
