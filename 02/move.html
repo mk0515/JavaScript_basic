@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習03</title>
+</head>
+
+<body>
+    <div>
+        <button id="left">←</button>
+        <button id="center">■</button>
+        <button id="right">→</button>
+    </div>
+
+    <img id="monster" src="https://pbs.twimg.com/media/EXae-7lWkAANYU6.png" alt="">
+
+    <script>
+        // const leftBtn = document.getElementById('left');
+        // const centerBtn = document.getElementById('center')
+        // const rightBtn = document.getElementById('right');
+        // const monster = document.getElementById('monster')
+
+        // leftBtn.addEventListener('click', function () {
+        //     monster.style.transForm = translateX(`${-10}px`);
+        // });
+
+        // rightBtn.addEventListener('click', function () {
+        //     monster.style.transForm = translateX(`${10}px`);
+        // })
+
+        let num = 0;
+        const monster = document.getElementById('monster')
+
+        const leftBtn = document.getElementById('left');
+        leftBtn.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num -= 5}px)`;
+        });
+
+        const rightBtn = document.getElementById('right');
+        right.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num += 5}px)`;
+        });
+
+        const centerBtn = document.getElementById('center')
+        center.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num = 0}px)`;
+        })
+    </script>
+</body>
+
+</html>

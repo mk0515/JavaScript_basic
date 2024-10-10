@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01</title>
+</head>
+
+<body>
+    <p id="result">0</p>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+
+    <script>
+        // let x = 1
+        // let plus = document.getElementById('plus');
+        // plus.addEventListener('click', function () {
+        //     plus.;
+        // });
+
+        //変数を定義
+        let num = 0;
+        const plusBtn = document.getElementById('plus');
+        const result = document.getElementById('result');
+        const minusBtn = document.getElementById('minus');
+
+        //数字を増やす
+        plusBtn.addEventListener('click', function () {
+            num += 1;
+            result.innerHTML = num;//文字を変える
+            console.log(num);//コンソールに表示
+        });
+
+        //数字を減らす
+        minusBtn.addEventListener('click', function () {
+            num -= 1;
+            result.innerHTML = num;
+            console.log(num);
+        });
+
+
+        let val = 1;
+        console.log(`url(${val += 1}.png)`);
+    </script>
+</body>
+
+</html>
