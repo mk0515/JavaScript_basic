@@ -17,22 +17,23 @@
 
     <script>
         let num = 0;
+        const url = 'https://picsum.photos/400/300?image=';
         const plusBtn = document.getElementById('plus');
         const setBtn = document.getElementById('set');
         const result = document.getElementById('result');
         const photo = document.getElementById('photo');
 
+        photo.setAttribute('src', url + num);
+
 
         plusBtn.addEventListener('click', function () {
             num += 1;
             set.innerHTML = num;
-            console.log(num);
         });
 
-        let src = photo.getAttribute('src');
         setBtn.addEventListener('click', function () {
-            photo.setAttribute('src', 'https://picsum.photos/200/300?image=(${set.innerHTML})');
-            result.innerHTML = src;
+            result.innerHTML = url + num;
+            photo.setAttribute('src', url + num);
         });
 
     </script>
