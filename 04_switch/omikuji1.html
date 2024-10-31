@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ 1</title>
+</head>
+
+<body>
+  <button id="btn">占う</button>
+  <p id="result">結果が表示されます。</p>
+  <p id="message">何か一言が表示されます。</p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+    const message = document.getElementById('message');
+
+    btn.addEventListener('click', function () {
+      let num = Math.floor(Math.random() * 5);
+
+      switch (num) {
+        case 0:
+          result.innerHTML = '大吉';
+          message.innerHTML = '大きく育つよ';
+          break;
+        case 1:
+          result.innerHTML = '中吉';
+          message.innerHTML = 'ネズミとお友達になる説';
+          break;
+        case 2:
+          result.innerHTML = '小吉';
+          message.innerHTML = '小学生に負ける可能性大！';
+          break;
+        case 3:
+          result.innerHTML = '凶';
+          message.innerHTML = '京都に行けなくなっちゃう';
+          break;
+        case 4:
+          result.innerHTML = '大凶';
+          message.innerHTML = '大胸筋が破裂するかも、、、';
+          break;
+        default:
+      }
+    });
+  </script>
+</body>
+
+</html>

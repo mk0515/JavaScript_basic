@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おみくじ3</title>
+  <style>
+    #result {
+      transition: .5s;
+    }
+
+    img {
+      transform: rotate(360deg) scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">占う</button>
+  <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt="占う"></p>
+  <p id="message">何か一言が表示されます。</p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const result = document.getElementById('result');
+    const message = document.getElementById('message');
+
+    btn.addEventListener('click', function () {
+      let num = Math.floor(Math.random() * 5);
+
+      switch (num) {
+        case 0:
+          result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikichi.png');
+          message.innerHTML = '大きく育つよ';
+          break;
+        case 1:
+          result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/chuukichi.png');
+          message.innerHTML = 'ネズミとお友達になる説';
+          break;
+        case 2:
+          result.setAttribute('src', ' https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/syoukichi.png');
+          message.innerHTML = '小学生に負ける可能性大！';
+          break;
+        case 3:
+          result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/kyou.png');
+          message.innerHTML = '京都に行けなくなっちゃう';
+          break;
+        case 4:
+          result.setAttribute('src', 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikyou.png');
+          message.innerHTML = '大胸筋が破裂するかも、、、';
+          break;
+        default:
+      }
+    });
+  </script>
+</body>
+
+</html>
