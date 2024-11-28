@@ -8,19 +8,15 @@
 </head>
 
 <body>
-  <p id="hoge" class="hoge"></p>
+  <ul>
+    <li id="top">aaa</li>
+    <li>bbb</li>
+    <li class="obj">ccc</li>
+    <li class="obj">ddd</li>
+  </ul>
   <script>
-    let fruits = ['apple', 'banana', 'orange'];
-    console.log(fruits[2]);
-
-    fruits[1] = 'peach';
-    fruits[3] = 'greap';
-    console.log(fruits.length);
-
-    console.log(fruits[fruits.length - 1]);
-
-    const empty = [];
-    console.log(empty);
+    const elme = document.querySelectorAll('#top');
+    console.log(elme)
   </script>
 </body>
 
