@@ -39,26 +39,39 @@
   <div class="all">
     <div class="chr">
       <img src="https://trident.takagino.net/doc/2018/javascript/data/03/images/a0.png" alt="">
-      <p>HP:</p>
+      <p></p>
     </div>
     <div class="chr">
       <img src="https://trident.takagino.net/doc/2018/javascript/data/03/images/a1.png" alt="">
-      <p>HP:</p>
+      <p></p>
     </div>
     <div class="chr">
       <img src="https://trident.takagino.net/doc/2018/javascript/data/03/images/a2.png" alt="">
-      <p>HP:</p>
+      <p></p>
     </div>
   </div>
   <script>
-    const chr = document.querySelectorAll('.chr');
-    const monster = document.querySelectorAll('.chr img');
+    const chr = document.querySelectorAll('.chr img');
     const hp = document.querySelectorAll('.chr p');
+    let msg = document.querySelector('.msg');
     let num = [];
 
-    for (let i = 0; i = chr[i].length; i--) {
-      monster[i].addEventListener('click', function () {
-        hp[i].innerHTML = `HP:${num -= 1}`;
+    console.log(hp);
+    console.log(msg);
+
+    for (let i = 0; i < chr.length; i++) {
+      num[i] = Math.floor(Math.random() * 5 + 5);
+      hp[i].innerHTML = "HP:" + num[i];
+
+      chr[i].addEventListener('click', function () {
+        if (num[i] > 0) {
+          num[i]--;
+          hp[i].innerHTML = "HP:" + num[i];
+        }
+
+        if ((num[0] + num[1] + num[2]) <= 0) {
+          msg.innerHTML = "おめでとう！"
+        }
       });
     }
   </script>
