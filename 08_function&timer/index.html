@@ -40,13 +40,50 @@
     // };
     // console.log(num(10));
 
-    let value = [5, 10, 15, 20, 25];
-    const getAverage = (val) => {
-      return val;
-    };
-    getAverage(value)
-    console.log(getAverage(value));
+    // let value = [5, 10, 15, 20, 25];
+    // const getAverage = (val) => {
+    //   let num = 0;
+    //   for (let i = 0; i < val.length; i++) {
+    //     num += val[i];
+    //   }
+    //   num /= val.length;
+    //   return num;
+    // };
+    // console.log(getAverage([5, 10, 15, 20, 25]));
 
+    // const clickEvent = (element) => {
+    //   console.log(element);
+    //   element.style.color = "#ff8000"
+    // };
+
+    // window.addEventListener('click', (e) => {
+    //   clickEvent(e.target);
+    // });
+
+    // let count = 0;
+    // const countUp = () => {
+    //   console.log(count++);
+    // }
+    //  setInterval(countUp, 1000);
+
+    // const changeColor = () => {
+    //   let r = Math.floor(Math.random() * 256);
+    //   let g = Math.floor(Math.random() * 256);
+    //   let b = Math.floor(Math.random() * 256);
+    //   document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+    // }
+    // setInterval(changeColor, 1000);
+
+    let count = 0;
+
+    const countUp = () => {
+      console.log(count++);
+      timer = setTimeout(countUp, 1000);
+      if (count > 5) {
+        clearTimeout(timer);
+      };
+    };
+    countUp();
   </script>
 </body>
 

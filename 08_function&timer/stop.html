@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ストップゲーム</title>
+</head>
+
+<body>
+  <button id="start">START</button>
+  <button id="stop">STOP</button>
+  <p id="num">0</p>
+  <p id="text"></p>
+
+  <script>
+    const startBtn = document.getElementById('start');
+    const stopBtn = document.getElementById('stop');
+    const num = document.getElementById('num');
+    const text = document.getElementById('text');
+    let count = 0;
+    let timer;
+
+    const countUp = () => {
+      console.log(count++)
+      num.innerHTML = count;
+    }
+
+    startBtn.addEventListener('click', () => {
+      count = 0;
+      text.textContent = '';
+      clearInterval(timer);
+      timer = setInterval(countUp, 100);
+
+    });
+
+    stopBtn.addEventListener('click', () => {
+      clearTimeout(timer);
+      if (count >= 98 && count <= 102) {
+        text.textContent = 'おしい！';
+      };
+      if (count == 100) {
+        text.textContent = 'すごい！';
+      };
+    });
+  </script>
+</body>
+
+</html>
